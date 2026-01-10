@@ -19,6 +19,12 @@ function addBookToLibrary(name, author, pages, readStatus) {
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
 addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
+addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
+addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
+addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
 
 const main = document.querySelector(".main")
 
