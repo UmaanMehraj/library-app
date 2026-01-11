@@ -69,3 +69,9 @@
   border-radius: 1rem;
   box-shadow: 0 0 10px 1px blue;
 }
+
+dialog:open {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

@@ -52,3 +52,5 @@ function displayCard() {
 }
 
 displayCard();
+
+const addBtn = document.querySelector('#addBtn')
