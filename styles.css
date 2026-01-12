@@ -72,6 +72,8 @@
 
 dialog:open {
   display: flex;
+  height: 50%;
+  width: auto;
   justify-content: center;
   align-content: center;
 }

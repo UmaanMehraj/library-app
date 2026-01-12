@@ -19,7 +19,20 @@
         <div class="header">
             <div class="heading">Library</div>
             <div class="button">
+                <dialog>
+                    <form method="dialog">
+                        <div>
+                            <label for="name">Name: </label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div>
+                            <button formmethod="dialog" value="cancel">Cancel</button>
+                            <button id="confirmBtn" value="default" type="submit">Confirm</button>
+                        </div>
+                    </form>
+                </dialog>
                 <button id="addBtn">Add Book</button>
+                <output></output>
             </div>
         </div>
         <div class="main">

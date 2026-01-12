@@ -54,3 +54,19 @@ function displayCard() {
 displayCard();
 
 const addBtn = document.querySelector('#addBtn')
+const dialog = document.querySelector('dialog')
+const confirmBtn = document.querySelector('#confirmBtn')
+const output = document.querySelector('output')
+
+addBtn.addEventListener('click', () => {
+    dialog.showModal()
+})
+
+dialog.addEventListener('close', (e) => {
+    console.log(dialog.returnValue)
+})
+
+confirmBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    dialog.close()
+})
