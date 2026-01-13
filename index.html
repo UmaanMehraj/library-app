@@ -14,32 +14,40 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="header">
             <div class="heading">Library</div>
             <div class="button">
                 <dialog>
-                    <form method="dialog">
+                    <form>
                         <div>
-                            <label for="name">Name: </label>
-                            <input type="text" name="name" required>
+                            <label>Name:
+                                <input type="text" id="name" required>
+                            </label>
+                            <label>Author:
+                                <input type="text" id="author" required>
+                            </label>
                         </div>
                         <div>
-                            <button formmethod="dialog" value="cancel">Cancel</button>
-                            <button id="confirmBtn" value="default" type="submit">Confirm</button>
+                            <label>Pages:
+                                <input type="number" id="pages" required>
+                            </label>
+                            <label>Read Status:
+                                <input type="text" id="readStatus" required>
+                            </label>
+                        </div>
+                        <div>
+                            <button value="cancel" formmethod="dialog">Cancel</button>
+                            <button id="confirmBtn" value="default">Confirm</button>
                         </div>
                     </form>
                 </dialog>
                 <button id="addBtn">Add Book</button>
-                <output></output>
             </div>
         </div>
         <div class="main">
-
         </div>
     </div>
-
 </body>
 
 </html>
