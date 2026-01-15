@@ -36,11 +36,13 @@ function displayCard() {
 
             const subDiv = document.createElement('div')
             subDiv.innerText = el[value]
+            subDiv.dataset.id = el[value]
             newDiv.appendChild(subDiv)
 
         }
         main.appendChild(newDiv)
     });
+    myLibrary = []
 }
 
 
