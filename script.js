@@ -17,9 +17,9 @@ function addBookToLibrary(name, author, pages, readStatus) {
 
 }
 
-// addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
-// addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
-// addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
+addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
 // addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
 // addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
 // addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
@@ -29,27 +29,23 @@ function addBookToLibrary(name, author, pages, readStatus) {
 const main = document.querySelector(".main")
 
 function displayCard() {
-    myLibrary.forEach((el) => {
-        const newDiv = document.createElement("div")
+    myLibrary.forEach(el => {
+        let newDiv = document.createElement('div')
         newDiv.className = "cards"
+        for (value in el) {
 
-        const subDivOne = document.createElement("div")
-        subDivOne.innerText = `Title: ${el.name}`
+            const subDiv = document.createElement('div')
+            subDiv.innerText = el[value]
+            newDiv.appendChild(subDiv)
 
-        const subDivTwo = document.createElement("div")
-        subDivTwo.innerText = `Author: ${el.author}`
-
-        const subDivThree = document.createElement("div")
-        subDivThree.innerText = `Number of Pages: ${el.pages}`
-
-        const subDivFour = document.createElement("div")
-        subDivFour.innerText = `Status: ${el.readStatus}`
-
-        newDiv.append(subDivOne, subDivTwo, subDivThree, subDivFour)
+        }
         main.appendChild(newDiv)
-
-    })
+    });
 }
+
+
+
+
 
 displayCard();
 
@@ -68,7 +64,7 @@ dialog.addEventListener('close', () => {
         addBookToLibrary(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value)
     }
     displayCard()
-    myLibrary = []
+
 })
 
 confirmBtn.addEventListener('click', (e) => {
