@@ -27,7 +27,7 @@ addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
 // addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, "Not read")
 
 const main = document.querySelector(".main")
-let dltButton;
+let dltButton, changeStatusBtn;
 
 function displayCard() {
     myLibrary.forEach(el => {
@@ -36,13 +36,17 @@ function displayCard() {
         for (value in el) {
             const subDiv = document.createElement('div')
             dltButton = document.createElement('button')
+            dltButton.id = 'dltBtn'
             dltButton.innerText = 'Remove'
+            dltButton.dataset.id = el[value]
+            changeStatusBtn = document.createElement('button')
+            changeStatusBtn.id = 'changeStatusBtn'
+            changeStatusBtn.innerText = 'Change Status'
             subDiv.innerText = el[value]
-            subDiv.dataset.id = el[value]
             newDiv.append(subDiv)
 
         }
-        newDiv.append(dltButton)
+        newDiv.append(dltButton, changeStatusBtn)
         main.appendChild(newDiv)
     });
     myLibrary = []
@@ -77,3 +81,13 @@ confirmBtn.addEventListener('click', (e) => {
     dialog.close()
 })
 
+
+const removeBtn = document.querySelectorAll('#dltBtn')
+
+removeBtn.forEach((btn) => {
+    let parentElement
+    btn.addEventListener('click', (e) => {
+        parentElement = e.target.parentElement
+        main.removeChild(parentElement)
+    })
+})
