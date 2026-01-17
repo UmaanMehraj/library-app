@@ -15,7 +15,6 @@ function addBookToLibrary(name, author, pages, readStatus) {
 
     myLibrary.push(newBook)
 
-
 }
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
@@ -46,14 +45,14 @@ function displayCard() {
         newDiv.append(dltButton, changeStatusBtn)
         main.appendChild(newDiv)
     });
-
+    myLibrary = []
 }
 
-displayCard()
 
 
 
 
+displayCard();
 
 const addBtn = document.querySelector('#addBtn')
 const dialog = document.querySelector('dialog')
@@ -89,5 +88,26 @@ removeBtns.forEach((btn) => {
     })
 })
 
+Book.prototype.toggleStatus = function () {
+    const readString = 'Read'
+    if (this.readStatus == readString.toUpperCase() || this.readStatus == readString.toLowerCase() || this.readStatus == readString) {
+        this.readStatus = 'Not Read'
+
+    }
+    else {
+        this.readStatus = readString
+
+    }
+}
+
+
+const chanegeStatusBtns = document.querySelectorAll('#changeStatusBtn')
+
+chanegeStatusBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+
+
+    })
+})
 
 
