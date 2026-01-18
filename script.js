@@ -22,6 +22,7 @@ function displayCard(book) {
         changeStatusBtn = document.createElement('button')
         changeStatusBtn.id = 'changeStatusBtn'
         changeStatusBtn.innerText = 'Change Status'
+        changeStatusBtn.dataset.id = book[value]
         subDiv.innerText = book[value]
         newDiv.append(subDiv)
 
@@ -102,11 +103,15 @@ Book.prototype.toggleStatus = function () {
 const chanegeStatusBtns = document.querySelectorAll('#changeStatusBtn')
 
 chanegeStatusBtns.forEach((btn) => {
-    myLibrary.forEach((book) => {
-        btn.addEventListener('click', () => {
-            book.toggleStatus()
+    btn.addEventListener('click', (e) => {
+        myLibrary.forEach((book) => {
+            if (book.id === e.target.dataset.id) {
+                book.toggleStatus()
+                displayCard(book)
+            }
         })
     })
 })
+
 
 

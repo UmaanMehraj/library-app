@@ -50,11 +50,23 @@
   justify-items: center;
   margin: 2rem;
   padding: 2rem;
-  box-shadow: 0 0 1px 0 black, 0 0 4px 0 gray;
+  box-shadow:
+    0 0 1px 0 black,
+    0 0 4px 0 gray;
 }
 .cards {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   display: flex;
   flex-direction: column;
   background-color: rgb(52, 44, 44);
@@ -132,4 +144,12 @@ label > input {
   width: 7.1rem;
   height: 2.2rem;
   box-shadow: 0 0 4px 2px red;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  margin: 2rem;
 }
