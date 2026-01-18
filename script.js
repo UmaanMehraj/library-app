@@ -1,10 +1,33 @@
-let myLibrary = []
+const myLibrary = []
 
 function Book(name, author, pages, readStatus) {
     this.name = name;
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
+
+}
+const main = document.querySelector(".main")
+let dltButton, changeStatusBtn;
+
+function displayCard(book) {
+    let newDiv = document.createElement('div')
+    newDiv.className = "cards"
+    for (value in book) {
+        const subDiv = document.createElement('div')
+        dltButton = document.createElement('button')
+        dltButton.id = 'dltBtn'
+        dltButton.innerText = 'Remove'
+        dltButton.dataset.id = book[value]
+        changeStatusBtn = document.createElement('button')
+        changeStatusBtn.id = 'changeStatusBtn'
+        changeStatusBtn.innerText = 'Change Status'
+        subDiv.innerText = book[value]
+        newDiv.append(subDiv)
+
+    }
+    newDiv.append(dltButton, changeStatusBtn)
+    main.appendChild(newDiv)
 
 }
 
@@ -14,6 +37,9 @@ function addBookToLibrary(name, author, pages, readStatus) {
 
 
     myLibrary.push(newBook)
+    if (newBook) {
+        displayCard(newBook)
+    }
 
 }
 
@@ -22,37 +48,9 @@ addBookToLibrary("Harry Potter and the Philosophers Stone", "J.K Rowling", 450, 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 1020, "Read")
 
 
-const main = document.querySelector(".main")
-let dltButton, changeStatusBtn;
-
-function displayCard() {
-    myLibrary.forEach(book => {
-        let newDiv = document.createElement('div')
-        newDiv.className = "cards"
-        for (value in book) {
-            const subDiv = document.createElement('div')
-            dltButton = document.createElement('button')
-            dltButton.id = 'dltBtn'
-            dltButton.innerText = 'Remove'
-            dltButton.dataset.id = book[value]
-            changeStatusBtn = document.createElement('button')
-            changeStatusBtn.id = 'changeStatusBtn'
-            changeStatusBtn.innerText = 'Change Status'
-            subDiv.innerText = book[value]
-            newDiv.append(subDiv)
-
-        }
-        newDiv.append(dltButton, changeStatusBtn)
-        main.appendChild(newDiv)
-    });
-    myLibrary = []
-}
 
 
 
-
-
-displayCard();
 
 const addBtn = document.querySelector('#addBtn')
 const dialog = document.querySelector('dialog')
@@ -68,7 +66,7 @@ dialog.addEventListener('close', () => {
     if (!(inputs[0].value === '' || inputs[1].value === '' || inputs[2].value === '' || inputs[3].value === '')) {
         addBookToLibrary(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value)
     }
-    displayCard()
+
 
 })
 
@@ -104,9 +102,10 @@ Book.prototype.toggleStatus = function () {
 const chanegeStatusBtns = document.querySelectorAll('#changeStatusBtn')
 
 chanegeStatusBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-
-
+    myLibrary.forEach((book) => {
+        btn.addEventListener('click', () => {
+            book.toggleStatus()
+        })
     })
 })
 
