@@ -14,17 +14,19 @@ function displayCard(book) {
     let newDiv = document.createElement('div')
     newDiv.className = "cards"
     for (value in book) {
-        const subDiv = document.createElement('div')
-        dltButton = document.createElement('button')
-        dltButton.id = 'dltBtn'
-        dltButton.innerText = 'Remove'
-        dltButton.dataset.id = book[value]
-        changeStatusBtn = document.createElement('button')
-        changeStatusBtn.id = 'changeStatusBtn'
-        changeStatusBtn.innerText = 'Change Status'
-        changeStatusBtn.dataset.id = book[value]
-        subDiv.innerText = book[value]
-        newDiv.append(subDiv)
+        if (book.hasOwnProperty(value)) {
+            const subDiv = document.createElement('div')
+            dltButton = document.createElement('button')
+            dltButton.id = 'dltBtn'
+            dltButton.innerText = 'Remove'
+            dltButton.dataset.id = book[value]
+            changeStatusBtn = document.createElement('button')
+            changeStatusBtn.id = 'changeStatusBtn'
+            changeStatusBtn.innerText = 'Change Status'
+            changeStatusBtn.dataset.id = book[value]
+            subDiv.innerText = book[value]
+            newDiv.append(subDiv)
+        }
 
     }
     newDiv.append(dltButton, changeStatusBtn)
@@ -120,3 +122,11 @@ chanegeStatusBtns.forEach((btn) => {
 
 
 
+
+function test(book) {
+    for (const value in book) {
+        if (book.hasOwnProperty(value)) {
+            console.log(book[value])
+        }
+    }
+}
