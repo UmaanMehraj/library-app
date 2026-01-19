@@ -147,9 +147,24 @@ label > input {
 }
 
 .footer {
+  box-sizing: border-box;
+  height: 20px;
+  width: 100%;
+  background-color: silver;
   position: fixed;
   bottom: 0;
-  left: 0;
-  text-align: center;
-  margin: 2rem;
+  padding: 3rem;
+  grid-row: 3/-1;
+  box-shadow: 10px 10px 10px 10px black;
+}
+
+.footer > div {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  color: black;
 }

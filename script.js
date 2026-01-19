@@ -97,6 +97,7 @@ Book.prototype.toggleStatus = function () {
         this.readStatus = readString
 
     }
+
 }
 
 
@@ -107,7 +108,6 @@ chanegeStatusBtns.forEach((btn) => {
         myLibrary.forEach((book) => {
             if (book.id === e.target.dataset.id) {
                 book.toggleStatus()
-                displayCard(book)
             }
         })
     })
