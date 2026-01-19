@@ -11,10 +11,6 @@ A simple and elegant web application for managing your personal book library. Ad
 - **Responsive Design**: Clean, modern UI with a card-based layout powered by CSS Grid
 - **Dialog Form**: User-friendly modal dialog for adding new books
 
-## Known Issues
-
-⚠️ **The "Change Status" button is not yet functional.** This feature is planned for future development. Currently, you can view the read status of books, but updating it is not supported.
-
 ## Project Structure
 
 ```
@@ -64,10 +60,3 @@ Works on all modern browsers that support:
 - HTML5 Dialog element
 - CSS Grid
 - Crypto API (for UUID generation)
-
-## Future Enhancements
-
-- [ ] Implement "Change Status" button functionality
-- [ ] Local storage persistence
-- [ ] Rating system for books
-- [ ] Reading progress tracking
