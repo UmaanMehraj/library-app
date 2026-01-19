@@ -108,8 +108,13 @@ chanegeStatusBtns.forEach((btn) => {
         myLibrary.forEach((book) => {
             if (book.id === e.target.dataset.id) {
                 book.toggleStatus()
+                const parEl = e.target.parentElement
+                const readStatus = parEl.querySelector('div:nth-of-type(4)')
+                readStatus.innerText = book.readStatus
             }
+
         })
+
     })
 })
 
