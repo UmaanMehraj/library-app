@@ -1,12 +1,22 @@
 const myLibrary = []
 
-function Book(name, author, pages, readStatus) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
 
+class Book{
+    constructor(name, author, pages, readStatus){
+        this.name = name
+        this.author = author
+        this.pages = pages
+        this.readStatus = readStatus
+    }
 }
+
+// function Book(name, author, pages, readStatus) {
+//     this.name = name;
+//     this.author = author;
+//     this.pages = pages;
+//     this.readStatus = readStatus;
+
+// }
 const main = document.querySelector(".main")
 let dltButton, changeStatusBtn;
 
@@ -84,6 +94,7 @@ const removeBtns = document.querySelectorAll('#dltBtn')
 removeBtns.forEach((btn) => {
     let parentElement
     btn.addEventListener('click', (e) => {
+        console.log(e)
         parentElement = e.target.parentElement
         main.removeChild(parentElement)
     })
