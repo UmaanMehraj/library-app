@@ -1,22 +1,28 @@
 const myLibrary = []
 
 
-class Book{
-    constructor(name, author, pages, readStatus){
+class Book {
+    constructor(name, author, pages, readStatus) {
         this.name = name
         this.author = author
         this.pages = pages
         this.readStatus = readStatus
     }
+    toggleStatus() {
+        const readString = 'Read'
+        if (this.readStatus == readString.toUpperCase() || this.readStatus == readString.toLowerCase() || this.readStatus == readString) {
+            this.readStatus = 'Not Read'
+
+        }
+        else {
+            this.readStatus = readString
+
+        }
+
+    }
 }
 
-// function Book(name, author, pages, readStatus) {
-//     this.name = name;
-//     this.author = author;
-//     this.pages = pages;
-//     this.readStatus = readStatus;
 
-// }
 const main = document.querySelector(".main")
 let dltButton, changeStatusBtn;
 
@@ -79,17 +85,19 @@ dialog.addEventListener('close', () => {
     if (!(inputs[0].value === '' || inputs[1].value === '' || inputs[2].value === '' || inputs[3].value === '')) {
         addBookToLibrary(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value)
     }
-
+    
 
 })
+let removeBtns = document.querySelectorAll('#dltBtn')
 
 confirmBtn.addEventListener('click', (e) => {
     e.preventDefault()
     dialog.close()
+    
 })
 
 
-const removeBtns = document.querySelectorAll('#dltBtn')
+
 
 removeBtns.forEach((btn) => {
     let parentElement
@@ -100,18 +108,6 @@ removeBtns.forEach((btn) => {
     })
 })
 
-Book.prototype.toggleStatus = function () {
-    const readString = 'Read'
-    if (this.readStatus == readString.toUpperCase() || this.readStatus == readString.toLowerCase() || this.readStatus == readString) {
-        this.readStatus = 'Not Read'
-
-    }
-    else {
-        this.readStatus = readString
-
-    }
-
-}
 
 
 const chanegeStatusBtns = document.querySelectorAll('#changeStatusBtn')
@@ -131,13 +127,3 @@ chanegeStatusBtns.forEach((btn) => {
     })
 })
 
-
-
-
-function test(book) {
-    for (const value in book) {
-        if (book.hasOwnProperty(value)) {
-            console.log(book[value])
-        }
-    }
-}
