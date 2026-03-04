@@ -60,3 +60,8 @@ Works on all modern browsers that support:
 - HTML5 Dialog element
 - CSS Grid
 - Crypto API (for UUID generation)
+
+
+## Bug
+- Currently, this app has a bug, where added books can't be removed or their status changed.
+- Contact me, if you know the fix.
